@@ -37,10 +37,6 @@ Alguns elementos precisam estar nessa interface como:
 Você determina a interface, use a criatividade.
 Nós fizemos essa tela assim.
 
-<p align="center">
-  <img src="filmes-em-breve-1.png" width="350" title="Tela de Filmes em breve, topo">
-  <img src="filmes-em-breve-2.png" width="350" title="Tela de Filmes em breve, com data de estreia">
-</p>
 
 Observações:
 
