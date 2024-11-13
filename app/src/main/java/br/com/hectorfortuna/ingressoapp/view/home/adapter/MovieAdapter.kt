@@ -59,6 +59,10 @@ class MovieAdapter(
                     }
                     val preSaleColor = ContextCompat.getColor(binding.cardViewItem.context, R.color.pre_sale);
                     binding.cardViewItem.setCardBackgroundColor(preSaleColor);
+                } else {
+                    binding.txtInPreSale.visibility = View.INVISIBLE
+                    val cardColor = ContextCompat.getColor(binding.cardViewItem.context, R.color.white);
+                    binding.cardViewItem.setCardBackgroundColor(cardColor);
                 }
             }
         }
