@@ -37,7 +37,7 @@ class MovieAdapter(
 
                 Glide.with(itemView)
                     .load(
-                        movieItem.images.firstOrNull { it.type == "PosterPortrait" }?.url
+                        movieItem.images?.firstOrNull { it.type == "PosterPortrait" }?.url
                             ?: R.drawable.ic_movie_clapperboard
                     )
                     .centerCrop()
@@ -53,7 +53,7 @@ class MovieAdapter(
                     itemClick.invoke(movieItem)
                 }
 
-                if (movieItem.inPreSale) {
+                if (movieItem.inPreSale == true) {
                     binding.txtInPreSale.apply {
                         visibility = View.VISIBLE
                     }

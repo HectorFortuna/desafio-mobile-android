@@ -2,79 +2,78 @@ package br.com.hectorfortuna.ingressoapp.data.model
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.RawValue
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Item(
     @SerializedName("b2BEventId")
-    val b2BEventId: String,
+    val b2BEventId: String?,
     @SerializedName("cities")
-    val cities: List<String>,
+    val cities: List<String>?,
     @SerializedName("id")
-    val id: String,
+    val id: String?,
     @SerializedName("title")
-    val title: String,
+    val title: String?,
     @SerializedName("originalTitle")
-    val originalTitle: String,
+    val originalTitle: String?,
     @SerializedName("type")
-    val type: String,
+    val type: String?,
     @SerializedName("movieIdUrl")
-    val movieIdUrl: String,
+    val movieIdUrl: String?,
     @SerializedName("ancineId")
-    val ancineId: String,
+    val ancineId: String?,
     @SerializedName("countryOrigin")
-    val countryOrigin: String,
+    val countryOrigin: String?,
     @SerializedName("priority")
-    val priority: Int,
+    val priority: Int?,
     @SerializedName("contentRating")
-    val contentRating: String,
+    val contentRating: String?,
     @SerializedName("duration")
-    val duration: String,
+    val duration: String?,
     @SerializedName("rating")
-    val rating: Double,
+    val rating: Double?,
     @SerializedName("synopsis")
-    val synopsis: String,
+    val synopsis: String?,
     @SerializedName("cast")
-    val cast: String,
+    val cast: String?,
     @SerializedName("director")
-    val director: String,
+    val director: String?,
     @SerializedName("distributor")
-    val distributor: String,
+    val distributor: String?,
     @SerializedName("inPreSale")
-    val inPreSale: Boolean,
+    val inPreSale: Boolean?,
     @SerializedName("isReexhibition")
-    val isReexhibition: Boolean,
+    val isReexhibition: Boolean?,
     @SerializedName("urlKey")
-    val urlKey: String,
+    val urlKey: String?,
     @SerializedName("isPlaying")
-    val isPlaying: Boolean,
+    val isPlaying: Boolean?,
     @SerializedName("countIsPlaying")
-    val countIsPlaying: Int,
+    val countIsPlaying: Int?,
     @SerializedName("premiereDate")
     val premiereDate: PremiereDate?,
     @SerializedName("creationDate")
-    val creationDate: String,
+    val creationDate: String?,
     @SerializedName("city")
-    val city: String,
+    val city: String?,
     @SerializedName("siteURL")
-    val siteURL: String,
+    val siteURL: String?,
     @SerializedName("nationalSiteURL")
-    val nationalSiteURL: String,
+    val nationalSiteURL: String?,
     @SerializedName("images")
-    val images: List<Image>,
+    val images: List<Image>?,
     @SerializedName("genres")
-    val genres: List<String>,
+    val genres: List<String>?,
     @SerializedName("ratingDescriptors")
-    val ratingDescriptors: List<String>,
+    val ratingDescriptors: List<String>?,
     @SerializedName("accessibilityHubs")
-    val accessibilityHubs: List<String>,
+    val accessibilityHubs: List<String>?,
     @SerializedName("completeTags")
-    val completeTags: List<String>,
+    val completeTags: List<String>?,
     @SerializedName("tags")
-    val tags: List<String>,
+    val tags: List<String>?,
     @SerializedName("trailers")
-    val trailers: List<Trailer>,
+    val trailers: List<Trailer>?,
     @SerializedName("partnershipType")
-    val partnershipType: String,
+    val partnershipType: String?,
 ):Parcelable

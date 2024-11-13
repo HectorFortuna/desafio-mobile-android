@@ -38,9 +38,8 @@ class MovieViewModel @Inject constructor(
                 }
                 response.items.let {
                     val sortedItems = sortItemsByPremiereDate(it)
-                    val sortedResponse = response.copy(items = sortedItems)  // Atualiza a lista ordenada
+                    val sortedResponse = response.copy(items = sortedItems)
 
-                    // Passa a resposta com os itens ordenados para o LiveData
                     _response.value = State.success(sortedResponse)
                 }
             } catch (throwable: Throwable) {
@@ -51,32 +50,28 @@ class MovieViewModel @Inject constructor(
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun sortItemsByPremiereDate(items: List<Item>): List<Item> {
-        val now = LocalDateTime.now()  // Obter a data e hora atual
+    fun sortItemsByPremiereDate(items: List<Item>): List<Item> {
+        val now = LocalDateTime.now()
 
         return items.sortedWith { item1, item2 ->
-            // Tenta fazer o parsing de cada premiereDate de forma segura
+
             val premiereDate1 = item1.premiereDate?.localDate?.let { parsePremiereDate(it) }
             val premiereDate2 = item2.premiereDate?.localDate?.let { parsePremiereDate(it) }
 
-            // Caso ambos tenham premiereDate, ordena pela data
             if (premiereDate1 != null && premiereDate2 != null) {
                 val diff1 = ChronoUnit.MINUTES.between(now, premiereDate1)
                 val diff2 = ChronoUnit.MINUTES.between(now, premiereDate2)
-                return@sortedWith diff1.compareTo(diff2)  // Compara o tempo restante até o lançamento
+                return@sortedWith diff1.compareTo(diff2)
             }
 
-            // Se item1 tem premiereDate e item2 não, coloca item1 primeiro
             if (premiereDate1 != null) {
-                return@sortedWith -1  // item1 vem antes
+                return@sortedWith -1
             }
 
-            // Se item2 tem premiereDate e item1 não, coloca item2 primeiro
             if (premiereDate2 != null) {
-                return@sortedWith 1  // item2 vem antes
+                return@sortedWith 1
             }
 
-            // Se ambos não têm premiereDate, mantém a ordem original
             return@sortedWith 0
         }
     }
